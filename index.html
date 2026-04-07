@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<script>
+  (function() {
+    const password = "kaizen411";
+    const storedPassword = localStorage.getItem("sitePassword");
+    
+    if (storedPassword !== password) {
+      const input = prompt("Enter password:");
+      if (input === password) {
+        localStorage.setItem("sitePassword", password);
+      } else {
+        document.body.innerHTML = "<h1>Access Denied</h1>";
+      }
+    }
+  })();
+</script>
+<!-- Rest of your site content --><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
